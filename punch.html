@@ -58,32 +58,32 @@
  
   let playCounter = 0;
   let gifPlayed = false;
-let totalPlayCount = parseInt(localStorage.getItem("totalPlayCount")) || 0;
+  let totalPlayCount = parseInt(localStorage.getItem("totalPlayCount")) || 0;
   document.getElementById('totalPlayCount').innerText = 'Your Total punches record:  ' + totalPlayCount;
-  // Display the first frame when the page loads
+  
   window.onload = function() {
     const gifContainer = document.getElementById('gifContainer');
     gifContainer.style.display = 'block';
   };
 
-  function playGif() {
+    function playGif() {
    
     const gifContainer = document.getElementById('gifContainer');
     const gif = document.getElementById('gif');
 
     if (!gifPlayed) {
-      gif.src = "serhoee.gif"; // Replace 'your-gif-url.gif' with the actual URL of your GIF
+      gif.src = "serhoee.gif"; 
       gifContainer.style.display = 'block';
 
       playCounter++;
       document.getElementById('playCount').innerText = 'Your current punch score: ' + playCounter;
         
-totalPlayCount++;
+    totalPlayCount++;
     localStorage.setItem("totalPlayCount", totalPlayCount);
     document.getElementById('totalPlayCount').innerText = 'Your Total punches record: ' + totalPlayCount;
         
         
-      // Set the duration for GIF play (1.2 seconds)
+      
       setTimeout(() => {
         gifContainer.style.display = 'none';
         gifPlayed = false;
