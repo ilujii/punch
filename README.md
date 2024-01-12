@@ -46,8 +46,8 @@
 </div>
     <button onclick="playGif()">PUNCH</button>
 
-<p id="playCount">Your punch score: 0</p>
-<p id="totalPlayCount">Total punches by Yabani fam: 0</p>
+<p id="playCount">Your current punch score: 0</p>
+<p id="totalPlayCount">Your total punches record: 0</p>
   <br> <br> 
 
     
@@ -59,7 +59,7 @@
   let playCounter = 0;
   let gifPlayed = false;
 let totalPlayCount = parseInt(localStorage.getItem("totalPlayCount")) || 0;
-  document.getElementById('totalPlayCount').innerText = 'Total punches by Yabani fam: ' + totalPlayCount;
+  document.getElementById('totalPlayCount').innerText = 'Your total punches record: ' + totalPlayCount;
   // Display the first frame when the page loads
   window.onload = function() {
     const gifContainer = document.getElementById('gifContainer');
@@ -76,11 +76,11 @@ let totalPlayCount = parseInt(localStorage.getItem("totalPlayCount")) || 0;
       gifContainer.style.display = 'block';
 
       playCounter++;
-      document.getElementById('playCount').innerText = 'Your punch score: ' + playCounter;
+      document.getElementById('playCount').innerText = 'Your current punch score: ' + playCounter;
         
 totalPlayCount++;
     localStorage.setItem("totalPlayCount", totalPlayCount);
-    document.getElementById('totalPlayCount').innerText = 'Total punches by Yabani fam: ' + totalPlayCount;
+    document.getElementById('totalPlayCount').innerText = 'Your total punches record: ' + totalPlayCount;
         
         
       // Set the duration for GIF play (1.2 seconds)
